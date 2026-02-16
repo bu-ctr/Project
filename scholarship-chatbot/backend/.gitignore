@@ -1,0 +1,19 @@
+# Sensitive files - DO NOT COMMIT
+firebase-service-account.json
+firebase-service-account*.json
+serviceAccountKey.json
+.env
+.env.local
+.env.production
+
+# Dependencies
+node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS
+.DS_Store
+Thumbs.db
