@@ -1,0 +1,497 @@
+<mxfile host="app.diagrams.net" modified="2026-02-05T06:35:50.000Z" agent="5.0" version="24.0.0" type="device">
+  <diagram name="Scholarship Chatbot ER Diagram" id="scholarship-er">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3000" pageHeight="2000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- USER Entity -->
+        <mxCell id="user-entity" value="USER" style="whiteSpace=wrap;html=1;align=center;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="400" y="800" width="140" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- USER Attributes -->
+        <mxCell id="user-id" value="user_id" style="ellipse;whiteSpace=wrap;html=1;align=center;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="420" y="680" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="user-id-line" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;dashed=1;dashPattern=5 5;" edge="1" parent="1" source="user-id" target="user-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="user-email" value="email" style="ellipse;whiteSpace=wrap;html=1;align=center;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="260" y="750" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="user-email-line" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;dashed=1;dashPattern=5 5;" edge="1" parent="1" source="user-email" target="user-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="user-password" value="password_hash" style="ellipse;whiteSpace=wrap;html=1;align=center;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="240" y="850" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="user-password-line" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;dashed=1;dashPattern=5 5;" edge="1" parent="1" source="user-password" target="user-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="user-provider" value="auth_provider" style="ellipse;whiteSpace=wrap;html=1;align=center;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="280" y="920" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="user-provider-line" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;dashed=1;dashPattern=5 5;" edge="1" parent="1" source="user-provider" target="user-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="user-google" value="google_id" style="ellipse;whiteSpace=wrap;html=1;align=center;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="560" y="920" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="user-google-line" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;dashed=1;dashPattern=5 5;" edge="1" parent="1" source="user-google" target="user-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="user-admin" value="is_admin" style="ellipse;whiteSpace=wrap;html=1;align=center;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="580" y="810" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="user-admin-line" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;dashed=1;dashPattern=5 5;" edge="1" parent="1" source="user-admin" target="user-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="user-created" value="created_at" style="ellipse;whiteSpace=wrap;html=1;align=center;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="560" y="710" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="user-created-line" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;dashed=1;dashPattern=5 5;" edge="1" parent="1" source="user-created" target="user-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- PROFILE Entity -->
+        <mxCell id="profile-entity" value="PROFILE" style="whiteSpace=wrap;html=1;align=center;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="1100" y="200" width="140" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- PROFILE Attributes -->
+        <mxCell id="profile-id" value="profile_id" style="ellipse;whiteSpace=wrap;html=1;align=center;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1120" y="80" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="profile-id-line" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;dashed=1;dashPattern=5 5;" edge="1" parent="1" source="profile-id" target="profile-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="profile-name" value="full_name" style="ellipse;whiteSpace=wrap;html=1;align=center;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="920" y="130" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="profile-name-line" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;dashed=1;dashPattern=5 5;" edge="1" parent="1" source="profile-name" target="profile-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="profile-course" value="course" style="ellipse;whiteSpace=wrap;html=1;align=center;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1340" y="130" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="profile-course-line" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;dashed=1;dashPattern=5 5;" edge="1" parent="1" source="profile-course" target="profile-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="profile-year" value="year_of_study" style="ellipse;whiteSpace=wrap;html=1;align=center;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1360" y="210" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="profile-year-line" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;dashed=1;dashPattern=5 5;" edge="1" parent="1" source="profile-year" target="profile-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="profile-caste" value="caste" style="ellipse;whiteSpace=wrap;html=1;align=center;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="900" y="210" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="profile-caste-line" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;dashed=1;dashPattern=5 5;" edge="1" parent="1" source="profile-caste" target="profile-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="profile-disability" value="disability" style="ellipse;whiteSpace=wrap;html=1;align=center;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="920" y="280" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="profile-disability-line" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;dashed=1;dashPattern=5 5;" edge="1" parent="1" source="profile-disability" target="profile-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="profile-dob" value="date_of_birth" style="ellipse;whiteSpace=wrap;html=1;align=center;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="80" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="profile-dob-line" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;dashed=1;dashPattern=5 5;" edge="1" parent="1" source="profile-dob" target="profile-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="profile-income" value="income" style="ellipse;whiteSpace=wrap;html=1;align=center;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="880" y="180" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="profile-income-line" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;dashed=1;dashPattern=5 5;" edge="1" parent="1" source="profile-income" target="profile-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="profile-tenth" value="tenth_percentage" style="ellipse;whiteSpace=wrap;html=1;align=center;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1340" y="280" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="profile-tenth-line" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;dashed=1;dashPattern=5 5;" edge="1" parent="1" source="profile-tenth" target="profile-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="profile-twelfth" value="twelfth_percentage" style="ellipse;whiteSpace=wrap;html=1;align=center;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1350" y="240" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="profile-twelfth-line" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;dashed=1;dashPattern=5 5;" edge="1" parent="1" source="profile-twelfth" target="profile-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="profile-city" value="city" style="ellipse;whiteSpace=wrap;html=1;align=center;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1120" y="340" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="profile-city-line" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;dashed=1;dashPattern=5 5;" edge="1" parent="1" source="profile-city" target="profile-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="profile-country" value="country" style="ellipse;whiteSpace=wrap;html=1;align=center;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1250" y="80" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="profile-country-line" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;dashed=1;dashPattern=5 5;" edge="1" parent="1" source="profile-country" target="profile-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- SCHOLARSHIP Entity -->
+        <mxCell id="scholarship-entity" value="SCHOLARSHIP" style="whiteSpace=wrap;html=1;align=center;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="1800" y="700" width="160" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- SCHOLARSHIP Attributes -->
+        <mxCell id="scholarship-id" value="scholarship_id" style="ellipse;whiteSpace=wrap;html=1;align=center;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1820" y="600" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="scholarship-id-line" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;dashed=1;dashPattern=5 5;" edge="1" parent="1" source="scholarship-id" target="scholarship-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="scholarship-title" value="title" style="ellipse;whiteSpace=wrap;html=1;align=center;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="2020" y="650" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="scholarship-title-line" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;dashed=1;dashPattern=5 5;" edge="1" parent="1" source="scholarship-title" target="scholarship-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="scholarship-provider" value="provider" style="ellipse;whiteSpace=wrap;html=1;align=center;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="2040" y="710" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="scholarship-provider-line" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;dashed=1;dashPattern=5 5;" edge="1" parent="1" source="scholarship-provider" target="scholarship-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="scholarship-amount" value="amount" style="ellipse;whiteSpace=wrap;html=1;align=center;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1830" y="820" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="scholarship-amount-line" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;dashed=1;dashPattern=5 5;" edge="1" parent="1" source="scholarship-amount" target="scholarship-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="scholarship-deadline" value="deadline" style="ellipse;whiteSpace=wrap;html=1;align=center;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1680" y="800" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="scholarship-deadline-line" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;dashed=1;dashPattern=5 5;" edge="1" parent="1" source="scholarship-deadline" target="scholarship-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="scholarship-url" value="application_url" style="ellipse;whiteSpace=wrap;html=1;align=center;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1640" y="720" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="scholarship-url-line" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;dashed=1;dashPattern=5 5;" edge="1" parent="1" source="scholarship-url" target="scholarship-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="scholarship-criteria" value="criteria_json" style="ellipse;whiteSpace=wrap;html=1;align=center;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1680" y="620" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="scholarship-criteria-line" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;dashed=1;dashPattern=5 5;" edge="1" parent="1" source="scholarship-criteria" target="scholarship-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="scholarship-steps" value="process_steps" style="ellipse;whiteSpace=wrap;html=1;align=center;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1980" y="600" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="scholarship-steps-line" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;dashed=1;dashPattern=5 5;" edge="1" parent="1" source="scholarship-steps" target="scholarship-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- APPLICATION Entity -->
+        <mxCell id="application-entity" value="APPLICATION" style="whiteSpace=wrap;html=1;align=center;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="1100" y="1100" width="150" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- APPLICATION Attributes -->
+        <mxCell id="application-id" value="application_id" style="ellipse;whiteSpace=wrap;html=1;align=center;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="940" y="1110" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="application-id-line" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;dashed=1;dashPattern=5 5;" edge="1" parent="1" source="application-id" target="application-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="application-status" value="status" style="ellipse;whiteSpace=wrap;html=1;align=center;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1125" y="1210" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="application-status-line" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;dashed=1;dashPattern=5 5;" edge="1" parent="1" source="application-status" target="application-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="application-submitted" value="submitted_at" style="ellipse;whiteSpace=wrap;html=1;align=center;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1300" y="1110" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="application-submitted-line" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;dashed=1;dashPattern=5 5;" edge="1" parent="1" source="application-submitted" target="application-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="application-data" value="data" style="ellipse;whiteSpace=wrap;html=1;align=center;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1125" y="1020" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="application-data-line" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;dashed=1;dashPattern=5 5;" edge="1" parent="1" source="application-data" target="application-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- NOTIFICATION Entity -->
+        <mxCell id="notification-entity" value="NOTIFICATION" style="whiteSpace=wrap;html=1;align=center;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="1500" y="1100" width="160" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- NOTIFICATION Attributes -->
+        <mxCell id="notification-id" value="notification_id" style="ellipse;whiteSpace=wrap;html=1;align=center;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1520" y="1020" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="notification-id-line" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;dashed=1;dashPattern=5 5;" edge="1" parent="1" source="notification-id" target="notification-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="notification-type" value="type" style="ellipse;whiteSpace=wrap;html=1;align=center;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1360" y="1110" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="notification-type-line" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;dashed=1;dashPattern=5 5;" edge="1" parent="1" source="notification-type" target="notification-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="notification-payload" value="payload" style="ellipse;whiteSpace=wrap;html=1;align=center;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1530" y="1210" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="notification-payload-line" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;dashed=1;dashPattern=5 5;" edge="1" parent="1" source="notification-payload" target="notification-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="notification-read" value="is_read" style="ellipse;whiteSpace=wrap;html=1;align=center;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1700" y="1110" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="notification-read-line" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;dashed=1;dashPattern=5 5;" edge="1" parent="1" source="notification-read" target="notification-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- GPA_CALCULATION Entity -->
+        <mxCell id="gpa-entity" value="GPA_CALCULATION" style="whiteSpace=wrap;html=1;align=center;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="100" y="1200" width="180" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- GPA_CALCULATION Attributes -->
+        <mxCell id="gpa-id" value="gpa_id" style="ellipse;whiteSpace=wrap;html=1;align=center;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="140" y="1120" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="gpa-id-line" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;dashed=1;dashPattern=5 5;" edge="1" parent="1" source="gpa-id" target="gpa-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="gpa-type" value="calculation_type" style="ellipse;whiteSpace=wrap;html=1;align=center;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1320" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="gpa-type-line" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;dashed=1;dashPattern=5 5;" edge="1" parent="1" source="gpa-type" target="gpa-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="gpa-semester" value="semester_name" style="ellipse;whiteSpace=wrap;html=1;align=center;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="320" y="1220" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="gpa-semester-line" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;dashed=1;dashPattern=5 5;" edge="1" parent="1" source="gpa-semester" target="gpa-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="gpa-scale" value="grading_scale" style="ellipse;whiteSpace=wrap;html=1;align=center;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="240" y="1320" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="gpa-scale-line" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;dashed=1;dashPattern=5 5;" edge="1" parent="1" source="gpa-scale" target="gpa-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="gpa-value" value="gpa" style="ellipse;whiteSpace=wrap;html=1;align=center;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="290" y="1140" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="gpa-value-line" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;dashed=1;dashPattern=5 5;" edge="1" parent="1" source="gpa-value" target="gpa-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- INTERNSHIP Entity -->
+        <mxCell id="internship-entity" value="INTERNSHIP" style="whiteSpace=wrap;html=1;align=center;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="2200" y="200" width="150" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- INTERNSHIP Attributes -->
+        <mxCell id="internship-id" value="internship_id" style="ellipse;whiteSpace=wrap;html=1;align=center;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="2215" y="120" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="internship-id-line" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;dashed=1;dashPattern=5 5;" edge="1" parent="1" source="internship-id" target="internship-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="internship-title" value="title" style="ellipse;whiteSpace=wrap;html=1;align=center;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="2400" y="210" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="internship-title-line" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;dashed=1;dashPattern=5 5;" edge="1" parent="1" source="internship-title" target="internship-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="internship-company" value="company" style="ellipse;whiteSpace=wrap;html=1;align=center;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="2060" y="210" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="internship-company-line" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;dashed=1;dashPattern=5 5;" edge="1" parent="1" source="internship-company" target="internship-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="internship-stipend" value="stipend" style="ellipse;whiteSpace=wrap;html=1;align=center;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="2225" y="310" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="internship-stipend-line" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;dashed=1;dashPattern=5 5;" edge="1" parent="1" source="internship-stipend" target="internship-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- COMPETITION Entity -->
+        <mxCell id="competition-entity" value="COMPETITION" style="whiteSpace=wrap;html=1;align=center;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="2200" y="500" width="160" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- COMPETITION Attributes -->
+        <mxCell id="competition-id" value="competition_id" style="ellipse;whiteSpace=wrap;html=1;align=center;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="2220" y="420" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="competition-id-line" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;dashed=1;dashPattern=5 5;" edge="1" parent="1" source="competition-id" target="competition-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="competition-title" value="title" style="ellipse;whiteSpace=wrap;html=1;align=center;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="2410" y="510" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="competition-title-line" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;dashed=1;dashPattern=5 5;" edge="1" parent="1" source="competition-title" target="competition-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="competition-organizer" value="organizer" style="ellipse;whiteSpace=wrap;html=1;align=center;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="2050" y="510" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="competition-organizer-line" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;dashed=1;dashPattern=5 5;" edge="1" parent="1" source="competition-organizer" target="competition-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="competition-prize" value="prize_money" style="ellipse;whiteSpace=wrap;html=1;align=center;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="2230" y="610" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="competition-prize-line" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;dashed=1;dashPattern=5 5;" edge="1" parent="1" source="competition-prize" target="competition-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- Relationship: Has (USER to PROFILE) -->
+        <mxCell id="rel-has" value="Has" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="750" y="480" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-has-user" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;" edge="1" parent="1" source="user-entity" target="rel-has">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-has-profile" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;" edge="1" parent="1" source="rel-has" target="profile-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-has-card-1" value="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="560" y="750" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-has-card-2" value="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="1050" y="250" width="30" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- Relationship: Applies For (USER to APPLICATION) -->
+        <mxCell id="rel-applies" value="Applies For" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="700" y="970" width="130" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-applies-user" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;" edge="1" parent="1" source="user-entity" target="rel-applies">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-applies-app" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;" edge="1" parent="1" source="rel-applies" target="application-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-applies-card-1" value="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="520" y="890" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-applies-card-n" value="N" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="1050" y="1080" width="30" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- Relationship: Receives (USER to NOTIFICATION) -->
+        <mxCell id="rel-receives" value="Receives" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="900" y="920" width="130" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-receives-user" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;" edge="1" parent="1" source="user-entity" target="rel-receives">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-receives-notif" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;" edge="1" parent="1" source="rel-receives" target="notification-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-receives-card-1" value="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="560" y="860" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-receives-card-n" value="N" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="1450" y="1080" width="30" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- Relationship: About (APPLICATION to SCHOLARSHIP) -->
+        <mxCell id="rel-about" value="About" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="1450" y="900" width="130" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-about-app" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;" edge="1" parent="1" source="application-entity" target="rel-about">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-about-scholarship" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;" edge="1" parent="1" source="rel-about" target="scholarship-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-about-card-n" value="N" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="1270" y="1070" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-about-card-1" value="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="1750" y="740" width="30" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- Relationship: Triggers (SCHOLARSHIP to NOTIFICATION) -->
+        <mxCell id="rel-triggers" value="Triggers" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="1700" y="920" width="130" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-triggers-scholarship" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;" edge="1" parent="1" source="scholarship-entity" target="rel-triggers">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-triggers-notif" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;" edge="1" parent="1" source="rel-triggers" target="notification-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-triggers-card-1" value="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="1830" y="780" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-triggers-card-n" value="N" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="1650" y="1080" width="30" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- Relationship: Performs (USER to GPA_CALCULATION) -->
+        <mxCell id="rel-performs" value="Performs" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="260" y="1030" width="130" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-performs-user" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;" edge="1" parent="1" source="user-entity" target="rel-performs">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-performs-gpa" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;" edge="1" parent="1" source="rel-performs" target="gpa-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-performs-card-1" value="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="400" y="900" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-performs-card-n" value="N" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="190" y="1170" width="30" height="30" as="geometry" />
+        </mxCell>
+        
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

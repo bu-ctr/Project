@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Use Case Diagram - Student Actor</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 40px;
+            font-family: 'Arial', sans-serif;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .diagram-container {
+            position: relative;
+            width: 800px;
+            height: 900px;
+        }
+
+        /* Actor - Stick Figure */
+        .actor {
+            position: absolute;
+            left: 50px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .stick-figure {
+            position: relative;
+            width: 60px;
+            height: 120px;
+        }
+
+        .head {
+            width: 40px;
+            height: 40px;
+            border: 3px solid #333;
+            border-radius: 50%;
+            position: absolute;
+            left: 10px;
+        }
+
+        .body {
+            width: 3px;
+            height: 40px;
+            background: #333;
+            position: absolute;
+            left: 28px;
+            top: 40px;
+        }
+
+        .arms {
+            width: 50px;
+            height: 3px;
+            background: #333;
+            position: absolute;
+            left: 5px;
+            top: 55px;
+        }
+
+        .left-leg {
+            width: 3px;
+            height: 35px;
+            background: #333;
+            position: absolute;
+            left: 15px;
+            top: 80px;
+            transform: rotate(-20deg);
+            transform-origin: top;
+        }
+
+        .right-leg {
+            width: 3px;
+            height: 35px;
+            background: #333;
+            position: absolute;
+            left: 40px;
+            top: 80px;
+            transform: rotate(20deg);
+            transform-origin: top;
+        }
+
+        .actor-label {
+            position: absolute;
+            top: 125px;
+            left: -5px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Use Cases */
+        .use-case {
+            position: absolute;
+            right: 100px;
+            width: 280px;
+            height: 50px;
+            border: 2px solid #333;
+            border-radius: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            font-size: 14px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        /* Position each use case */
+        .uc1 {
+            top: 20px;
+        }
+
+        .uc2 {
+            top: 80px;
+        }
+
+        .uc3 {
+            top: 140px;
+        }
+
+        .uc4 {
+            top: 200px;
+        }
+
+        .uc5 {
+            top: 260px;
+        }
+
+        .uc6 {
+            top: 320px;
+        }
+
+        .uc7 {
+            top: 380px;
+        }
+
+        .uc8 {
+            top: 440px;
+        }
+
+        .uc9 {
+            top: 500px;
+        }
+
+        .uc10 {
+            top: 560px;
+        }
+
+        .uc11 {
+            top: 620px;
+        }
+
+        .uc12 {
+            top: 680px;
+        }
+
+        .uc13 {
+            top: 740px;
+        }
+
+        .uc14 {
+            top: 800px;
+        }
+
+        .uc15 {
+            top: 860px;
+        }
+
+        /* Connection Lines */
+        svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        line {
+            stroke: #333;
+            stroke-width: 1.5;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="max-width: 900px;">
+        <div class="title">Use Case Diagram - Student Actor</div>
+        <div class="diagram-container">
+            <!-- Actor -->
+            <div class="actor">
+                <div class="stick-figure">
+                    <div class="head"></div>
+                    <div class="body"></div>
+                    <div class="arms"></div>
+                    <div class="left-leg"></div>
+                    <div class="right-leg"></div>
+                </div>
+                <div class="actor-label">Student</div>
+            </div>
+
+            <!-- Use Cases -->
+            <div class="use-case uc1">Register</div>
+            <div class="use-case uc2">Login</div>
+            <div class="use-case uc3">Logout</div>
+            <div class="use-case uc4">Manage Profile</div>
+            <div class="use-case uc5">Chat with AI Assistance</div>
+            <div class="use-case uc6">View Scholarships</div>
+            <div class="use-case uc7">View Internships</div>
+            <div class="use-case uc8">View Competitions</div>
+            <div class="use-case uc9">Check Eligibility</div>
+            <div class="use-case uc10">Apply for Scholarship</div>
+            <div class="use-case uc11">View My Applications</div>
+            <div class="use-case uc12">View Notifications</div>
+            <div class="use-case uc13">Calculate GPA</div>
+            <div class="use-case uc14">View Dashboard</div>
+            <div class="use-case uc15">Search Opportunities</div>
+
+            <!-- Connection Lines -->
+            <svg>
+                <line x1="110" y1="425" x2="420" y2="45" />
+                <line x1="110" y1="425" x2="420" y2="105" />
+                <line x1="110" y1="425" x2="420" y2="165" />
+                <line x1="110" y1="425" x2="420" y2="225" />
+                <line x1="110" y1="425" x2="420" y2="285" />
+                <line x1="110" y1="425" x2="420" y2="345" />
+                <line x1="110" y1="425" x2="420" y2="405" />
+                <line x1="110" y1="425" x2="420" y2="465" />
+                <line x1="110" y1="425" x2="420" y2="525" />
+                <line x1="110" y1="425" x2="420" y2="585" />
+                <line x1="110" y1="425" x2="420" y2="645" />
+                <line x1="110" y1="425" x2="420" y2="705" />
+                <line x1="110" y1="425" x2="420" y2="765" />
+                <line x1="110" y1="425" x2="420" y2="825" />
+                <line x1="110" y1="425" x2="420" y2="885" />
+            </svg>
+        </div>
+    </div>
+</body>
+
+</html>

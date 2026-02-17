@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Use Case Diagram - System Actor</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 40px;
+            font-family: 'Arial', sans-serif;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .diagram-container {
+            position: relative;
+            width: 800px;
+            height: 450px;
+        }
+
+        /* Actor - Stick Figure */
+        .actor {
+            position: absolute;
+            left: 50px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .stick-figure {
+            position: relative;
+            width: 60px;
+            height: 120px;
+        }
+
+        .head {
+            width: 40px;
+            height: 40px;
+            border: 3px solid #0D47A1;
+            border-radius: 50%;
+            position: absolute;
+            left: 10px;
+        }
+
+        .body {
+            width: 3px;
+            height: 40px;
+            background: #0D47A1;
+            position: absolute;
+            left: 28px;
+            top: 40px;
+        }
+
+        .arms {
+            width: 50px;
+            height: 3px;
+            background: #0D47A1;
+            position: absolute;
+            left: 5px;
+            top: 55px;
+        }
+
+        .left-leg {
+            width: 3px;
+            height: 35px;
+            background: #0D47A1;
+            position: absolute;
+            left: 15px;
+            top: 80px;
+            transform: rotate(-20deg);
+            transform-origin: top;
+        }
+
+        .right-leg {
+            width: 3px;
+            height: 35px;
+            background: #0D47A1;
+            position: absolute;
+            left: 40px;
+            top: 80px;
+            transform: rotate(20deg);
+            transform-origin: top;
+        }
+
+        .actor-label {
+            position: absolute;
+            top: 125px;
+            left: 0px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #0D47A1;
+        }
+
+        /* Use Cases */
+        .use-case {
+            position: absolute;
+            right: 100px;
+            width: 280px;
+            height: 50px;
+            border: 2px solid #0288D1;
+            border-radius: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            font-size: 14px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        /* Position each use case */
+        .uc1 {
+            top: 50px;
+        }
+
+        .uc2 {
+            top: 130px;
+        }
+
+        .uc3 {
+            top: 210px;
+        }
+
+        .uc4 {
+            top: 290px;
+        }
+
+        .uc5 {
+            top: 370px;
+        }
+
+        /* Connection Lines */
+        svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        line {
+            stroke: #0D47A1;
+            stroke-width: 1.5;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="max-width: 900px;">
+        <div class="title">Use Case Diagram - System Actor</div>
+        <div class="diagram-container">
+            <!-- Actor -->
+            <div class="actor">
+                <div class="stick-figure">
+                    <div class="head"></div>
+                    <div class="body"></div>
+                    <div class="arms"></div>
+                    <div class="left-leg"></div>
+                    <div class="right-leg"></div>
+                </div>
+                <div class="actor-label">System</div>
+            </div>
+
+            <!-- Use Cases -->
+            <div class="use-case uc1">Auto-Match Profiles</div>
+            <div class="use-case uc2">Send Notifications</div>
+            <div class="use-case uc3">Calculate Match Score</div>
+            <div class="use-case uc4">Extract Process Steps</div>
+            <div class="use-case uc5">Generate Recommendations</div>
+
+            <!-- Connection Lines -->
+            <svg>
+                <line x1="110" y1="225" x2="420" y2="75" />
+                <line x1="110" y1="225" x2="420" y2="155" />
+                <line x1="110" y1="225" x2="420" y2="235" />
+                <line x1="110" y1="225" x2="420" y2="315" />
+                <line x1="110" y1="225" x2="420" y2="395" />
+            </svg>
+        </div>
+    </div>
+</body>
+
+</html>
