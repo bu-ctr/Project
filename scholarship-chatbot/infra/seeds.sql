@@ -1,73 +1,379 @@
 -- ==========================
--- SEED DATA
+-- COMPREHENSIVE SEED DATA
+-- Scholarships, Internships, Competitions
+-- Run this in Neon SQL Editor
 -- ==========================
 
--- USERS
-INSERT INTO users (email, password_hash, is_admin)
-VALUES 
-    ('admin@example.com', '12345678', true),
-    ('alice@example.com', ''),
-    ('bob@example.com', '');
+-- ========================
+-- SCHOLARSHIPS (15 real Indian scholarships)
+-- ========================
+INSERT INTO scholarships (title, provider, description, amount, deadline, application_url, criteria, tags) VALUES
 
--- PROFILES
-INSERT INTO profiles (
-    user_id, full_name, course, year_of_study, gpa, income,
-    caste, disability, disability_details,
-    address_line1, city, state, postal_code, country,
-    tenth_percentage, twelfth_percentage, last_semester_marks
-)
-VALUES
-    (2, 'Alice Student', 'Computer Science', 2, 8.6, 200000,
-        'General', false, null,
-        '123 Road', 'Mumbai', 'Maharashtra', '400001', 'India',
-        88, 90, 85),
+('National Merit Scholarship (NMMS)',
+ 'Ministry of Education, India',
+ 'National Means-cum-Merit Scholarship for students from Class 8 to Class 12. Awarded to students from low-income families who clear the NMMS exam. Open to students studying in government schools.',
+ '₹12,000/year',
+ '2025-10-31',
+ 'https://scholarships.gov.in',
+ '{"max_income": 150000, "min_10_percentage": 55}',
+ ARRAY['government','merit','class-8-12','income-based']),
 
-    (3, 'Bob Learner', 'Mechanical Engineering', 3, 7.4, 600000,
-        'OBC', false, null,
-        '44 Street', 'Pune', 'Maharashtra', '411001', 'India',
-        75, 78, 72);
+('Prime Minister Scholarship Scheme (PMSS)',
+ 'Ministry of Home Affairs, India',
+ 'Scholarship for wards and widows of ex-servicemen and ex-coast guard personnel pursuing professional degree programmes. Covers technical and MBA courses.',
+ '₹2,500/month (Girls), ₹2,000/month (Boys)',
+ '2025-11-30',
+ 'https://ksb.gov.in/pmss.htm',
+ '{"course_in": ["Engineering", "Medical", "MBA", "BBA", "BCA", "MCA"]}',
+ ARRAY['government','defence','professional','merit']),
 
--- SAMPLE SCHOLARSHIPS
-INSERT INTO scholarships (title, provider, description, amount, deadline, application_url, process_steps, criteria)
-VALUES
-(
-    'CS Excellence Scholarship',
-    'TechTrust',
-    'For Computer Science students with good GPA and low income.',
-    '₹50,000',
-    '2026-01-31',
-    'https://example.com/apply-cs',
-    '[]',
-    '{
-        "gpa_min": 8.0,
-        "course_in": ["Computer Science"],
-        "max_income": 500000,
-        "min_10_percentage": 75,
-        "min_12_percentage": 80
-    }'
-),
-(
-    'ST/SC Merit Scholarship',
-    'Govt. Education Board',
-    'Scholarship for ST/SC category students with 12th marks above 70%',
-    '₹35,000',
-    '2026-03-15',
-    'https://example.com/stsc-scholarship',
-    '[]',
-    '{
-        "caste_in": ["SC", "ST"],
-        "min_12_percentage": 70
-    }'
-),
-(
-    'Disability Support Scholarship',
-    'Inclusive India Foundation',
-    'Financial support for students with documented disabilities.',
-    '₹40,000',
-    '2026-02-20',
-    'https://example.com/disability-grant',
-    '[]',
-    '{
-        "disability_required": true
-    }'
-);
+('Central Sector Scheme of Scholarship (CSSS)',
+ 'Department of Higher Education, India',
+ 'Merit-based scholarship of the Government of India for college and university students who score above the 80th percentile in their Class 12 board exams. Covers all disciplines.',
+ '₹10,000/year (First 3 yrs), ₹20,000/year (4th & 5th yr)',
+ '2025-10-15',
+ 'https://scholarships.gov.in',
+ '{"min_12_percentage": 80, "max_income": 800000}',
+ ARRAY['government','merit','college','university']),
+
+('Inspire Scholarship (SHE)',
+ 'Department of Science & Technology, India',
+ 'Scholarship for Holistic Advancement of Research & Exploration (SHARE) for students pursuing natural and basic sciences. Encourages bright students to take up research careers.',
+ '₹80,000/year',
+ '2025-09-30',
+ 'https://online-inspire.gov.in',
+ '{"course_in": ["Physics", "Chemistry", "Mathematics", "Biology", "Statistics", "Computer Science"], "min_12_percentage": 75}',
+ ARRAY['science','research','government','merit']),
+
+('Pragati Scholarship for Girl Students (AICTE)',
+ 'All India Council for Technical Education (AICTE)',
+ 'Scholarship for girl students pursuing technical education (diploma and degree) to promote women in science and technology fields. One scholarship per family.',
+ '₹50,000/year',
+ '2025-11-30',
+ 'https://www.aicte-india.org/bureaus/pgrants',
+ '{"max_income": 800000, "course_in": ["Engineering", "Technology", "Pharmacy", "Architecture"]}',
+ ARRAY['girls','engineering','technology','government','AICTE']),
+
+('Saksham Scholarship (AICTE)',
+ 'All India Council for Technical Education (AICTE)',
+ 'Scholarship for specially-abled (disabled) students pursuing technical degree and diploma programmes. Promotes inclusive education in engineering and technology.',
+ '₹50,000/year',
+ '2025-11-30',
+ 'https://www.aicte-india.org/bureaus/pgrants',
+ '{"disability_required": true, "course_in": ["Engineering", "Technology", "Pharmacy", "Architecture"]}',
+ ARRAY['disability','engineering','government','AICTE','inclusive']),
+
+('Kishore Vaigyanik Protsahan Yojana (KVPY)',
+ 'Indian Institute of Science (IISc)',
+ 'Fellowship program to attract exceptionally motivated students to pursue a career in research in basic sciences. Covers BSc, BS, Int. MSc and Int. MS programs.',
+ '₹5,000–7,000/month + Annual Contingency',
+ '2025-08-31',
+ 'https://kvpy.iisc.ac.in',
+ '{"course_in": ["Physics", "Chemistry", "Mathematics", "Biology"], "min_10_percentage": 75}',
+ ARRAY['science','research','fellowship','IISc','merit']),
+
+('Tata Scholarship for Cornell University',
+ 'Tata Education and Development Trust',
+ 'Scholarships for students from India to pursue undergraduate education at Cornell University, USA. Covers full financial need with grants, not loans.',
+ 'Full financial need met',
+ '2026-01-01',
+ 'https://tatatrust.cornell.edu',
+ '{"max_income": 1000000, "min_12_percentage": 85}',
+ ARRAY['international','USA','Cornell','merit','need-based']),
+
+('Reliance Foundation Undergraduate Scholarship',
+ 'Reliance Foundation',
+ 'Merit and means based scholarship for undergraduate students in India studying Engineering, Computer Science, Economics, Humanities, Natural Sciences, and Management.',
+ '₹2,00,000/year',
+ '2025-12-31',
+ 'https://rf.foundation/scholarships',
+ '{"max_income": 600000, "min_12_percentage": 60, "gpa_min": 6.0, "course_in": ["Engineering", "Computer Science", "Economics", "Management", "Natural Sciences"]}',
+ ARRAY['private','merit','need-based','undergraduate','STEM']),
+
+('Sitaram Jindal Foundation Scholarship',
+ 'Sitaram Jindal Foundation',
+ 'Scholarship for meritorious students studying in recognised colleges and universities. Open to students from all disciplines who have a good academic record and belong to economically weaker sections.',
+ '₹1,000–₹2,500/month',
+ '2025-09-30',
+ 'https://sitaramjindalfoundation.org',
+ '{"max_income": 250000, "gpa_min": 6.0}',
+ ARRAY['private','merit','need-based','all-courses']),
+
+('Maulana Azad National Fellowship (MANF)',
+ 'University Grants Commission (UGC)',
+ 'Integrated five-year fellowship for M.Phil and PhD students from minority communities (Muslims, Christians, Sikhs, Buddhists, Jains, Zoroastrians) to pursue higher education.',
+ '₹31,000/month (JRF), ₹35,000/month (SRF)',
+ '2025-10-31',
+ 'https://maef.nic.in',
+ '{"course_in": ["PhD", "M.Phil"], "caste_in": ["Minority"]}',
+ ARRAY['minority','phd','research','UGC','fellowship']),
+
+('Post Matric Scholarship for OBC Students',
+ 'Ministry of Social Justice and Empowerment',
+ 'Scholarship for Other Backward Class (OBC) students pursuing post-matriculation or post-secondary level courses. Covers full course fees and maintenance allowance.',
+ 'Course fee + ₹300–1,200/month maintenance',
+ '2025-10-31',
+ 'https://scholarships.gov.in',
+ '{"caste_in": ["OBC"], "max_income": 300000}',
+ ARRAY['OBC','government','post-matric','need-based']),
+
+('Post Matric Scholarship for SC Students',
+ 'Ministry of Social Justice and Empowerment',
+ 'Scholarship for Scheduled Caste students pursuing post-matriculation courses in government or private recognized schools, colleges, or universities.',
+ 'Full tuition fee + maintenance allowance',
+ '2025-10-31',
+ 'https://scholarships.gov.in',
+ '{"caste_in": ["SC"], "max_income": 250000}',
+ ARRAY['SC','government','post-matric','need-based']),
+
+('Wipro Earthian Scholarship',
+ 'Wipro',
+ 'Award for students and teachers who develop original, systemic thinking on environmental sustainability. Open to students from Classes 8–12 and undergraduate level.',
+ '₹50,000 + Mentorship',
+ '2025-09-15',
+ 'https://www.wipro.com/sustainability/wipro-earthian/',
+ '{"course_in": ["Environmental Science", "Sustainability", "Engineering", "Science"]}',
+ ARRAY['private','sustainability','environment','corporate']),
+
+('Google Generation Scholarship',
+ 'Google',
+ 'Scholarship for students in computer science or related fields who demonstrate academic excellence and passion for technology, with a focus on underrepresented communities.',
+ '$10,000 USD',
+ '2025-12-01',
+ 'https://buildyourfuture.withgoogle.com/scholarships',
+ '{"course_in": ["Computer Science", "IT", "Software Engineering", "Information Technology"], "min_12_percentage": 70}',
+ ARRAY['international','computer-science','Google','technology','STEM'])
+
+ON CONFLICT DO NOTHING;
+
+
+-- ========================
+-- INTERNSHIPS (12 real internship opportunities)
+-- ========================
+INSERT INTO internships (title, company, description, stipend, deadline, application_url, criteria, tags) VALUES
+
+('Software Engineering Intern',
+ 'Google India',
+ 'Work on Google-scale products alongside experienced engineers. You will design, develop, test, deploy, maintain, and improve software. Strong problem-solving and coding skills required. Roles available in Hyderabad, Bangalore, and Gurgaon.',
+ '₹1,50,000/month',
+ '2025-11-30',
+ 'https://careers.google.com/students/',
+ '{"course_in": ["Computer Science", "IT", "Software Engineering"], "gpa_min": 7.5}',
+ ARRAY['software','engineering','tech','google','paid']),
+
+('Data Science Intern',
+ 'Microsoft India',
+ 'Assist data science and AI teams in building ML models, processing large datasets, and creating data pipelines. Exposure to Azure cloud platform and Microsoft AI products. Hybrid work from Hyderabad or Bangalore.',
+ '₹80,000/month',
+ '2025-10-31',
+ 'https://careers.microsoft.com/students/',
+ '{"course_in": ["Computer Science", "Data Science", "Statistics", "Mathematics", "AI/ML"], "gpa_min": 7.0}',
+ ARRAY['data-science','AI','ML','microsoft','tech','paid']),
+
+('Business Analyst Intern',
+ 'McKinsey & Company',
+ 'Work on high-impact consulting projects across industries including healthcare, finance, and manufacturing. Analyze data, develop insights, and help formulate strategies for India''s top companies.',
+ '₹1,00,000/month',
+ '2025-09-30',
+ 'https://www.mckinsey.com/careers/students',
+ '{"course_in": ["MBA", "Economics", "Engineering", "Business Administration"], "gpa_min": 7.0}',
+ ARRAY['consulting','business','strategy','finance','paid']),
+
+('UI/UX Design Intern',
+ 'Flipkart',
+ 'Join Flipkart''s design team working on India''s largest e-commerce platform. Work on user research, wireframing, prototyping, and A/B testing features used by 300M+ users. Bangalore onsite.',
+ '₹50,000/month',
+ '2025-10-15',
+ 'https://www.flipkartcareers.com/students',
+ '{"course_in": ["Design", "Computer Science", "Media", "Fine Arts", "HCI"]}',
+ ARRAY['design','UX','UI','ecommerce','flipkart','creative']),
+
+('Product Management Intern',
+ 'Razorpay',
+ 'Accelerate your PM career at India''s leading fintech unicorn. Define product roadmaps, work with engineering and design, analyze user behavior, and launch features to millions of merchants and consumers.',
+ '₹60,000/month',
+ '2025-11-15',
+ 'https://razorpay.com/jobs/',
+ '{"course_in": ["MBA", "Computer Science", "Engineering", "Economics"]}',
+ ARRAY['product-management','fintech','startup','unicorn','paid']),
+
+('Machine Learning Research Intern',
+ 'Indian Statistical Institute (ISI)',
+ 'Research internship in ML, deep learning, and statistical modeling. Work alongside PhD scholars on cutting-edge research. Publish papers at top conferences. Available at Kolkata, Delhi, and Bangalore campuses.',
+ '₹15,000/month + accommodation',
+ '2025-08-31',
+ 'https://www.isical.ac.in/~camstudy',
+ '{"course_in": ["Mathematics", "Statistics", "Computer Science", "Physics"], "gpa_min": 8.0}',
+ ARRAY['research','ML','statistics','academia','ISI']),
+
+('Civil Engineering Intern',
+ 'Larsen & Toubro (L&T)',
+ 'On-site engineering internship at major infrastructure projects across India. Work on highways, metros, smart cities, and buildings. Gain hands-on experience in project management, CAD, and structural design.',
+ '₹20,000/month',
+ '2025-09-30',
+ 'https://careers.larsentoubro.com/students',
+ '{"course_in": ["Civil Engineering", "Structural Engineering", "Infrastructure"]}',
+ ARRAY['civil-engineering','construction','infrastructure','L&T','onsite']),
+
+('Finance & Investment Banking Intern',
+ 'Goldman Sachs India',
+ 'Summer analyst program in Investment Banking Division. Work on live deal execution, financial modelling, pitch books, and market research. Bangalore or Mumbai based.',
+ '₹1,20,000/month',
+ '2025-10-01',
+ 'https://goldmansachs.com/careers/',
+ '{"course_in": ["Finance", "Economics", "MBA", "CA", "Engineering"], "gpa_min": 7.5}',
+ ARRAY['finance','investment-banking','goldman-sachs','quantitative','paid']),
+
+('Marketing & Digital Growth Intern',
+ 'Swiggy',
+ 'Drive growth experiments, manage digital campaigns, and analyze user funnels for India''s fastest food delivery platform. Hands-on experience with A/B testing, SEO, and performance marketing.',
+ '₹40,000/month',
+ '2025-11-01',
+ 'https://careers.swiggy.com',
+ '{"course_in": ["Marketing", "Business Administration", "Mass Communication", "MBA"]}',
+ ARRAY['marketing','digital','growth','startup','food-tech']),
+
+('Biomedical Research Intern',
+ 'AIIMS New Delhi',
+ 'Prestigious research internship at India''s premier medical institution. Work in labs on clinical research, biostatistics, or healthcare technology. Students from life sciences, pharmacy, and biomedical engineering preferred.',
+ '₹10,000/month',
+ '2025-08-15',
+ 'https://aiims.edu/en/departments/research.html',
+ '{"course_in": ["Biomedical Engineering", "Pharmacy", "Biotechnology", "Life Sciences", "MBBS"]}',
+ ARRAY['biomedical','research','healthcare','AIIMS','life-sciences']),
+
+('Sustainability & ESG Intern',
+ 'Tata Consultancy Services (TCS)',
+ 'Work in TCS''s sustainability division on ESG reporting, carbon footprint analysis, and green IT initiatives. Contribute to making TCS a net-zero company by 2030.',
+ '₹30,000/month',
+ '2025-10-31',
+ 'https://www.tcs.com/careers/india/students',
+ '{"course_in": ["Environmental Science", "Engineering", "MBA", "Chemistry", "Economics"]}',
+ ARRAY['sustainability','ESG','TCS','environment','CSR']),
+
+('Journalism & Content Intern',
+ 'The Hindu',
+ 'Editorial internship at one of India''s oldest and most respected newspapers. Cover beats like politics, economy, science, and technology. Opportunities in Chennai, Delhi, and Bangalore offices.',
+ '₹15,000/month',
+ '2025-09-15',
+ 'https://thehindu.com/careers',
+ '{"course_in": ["Journalism", "Mass Communication", "English Literature", "Political Science"]}',
+ ARRAY['journalism','media','writing','content','editorial'])
+
+ON CONFLICT DO NOTHING;
+
+
+-- ========================
+-- COMPETITIONS (12 real competitions)
+-- ========================
+INSERT INTO competitions (title, organizer, description, prize_money, event_date, application_url, criteria, tags) VALUES
+
+('Smart India Hackathon (SIH)',
+ 'Ministry of Education, AICTE, i4c',
+ 'India''s biggest open innovation model — a nationwide hackathon that challenges students to solve problems which matter to our country and society. Teams of 6 build solutions for real government problems in a 36-hour sprint.',
+ '₹1,00,000 per winning team per problem',
+ 'December 2025',
+ 'https://www.sih.gov.in',
+ '{"course_in": ["Engineering", "Computer Science", "Design", "Management"]}',
+ ARRAY['hackathon','government','innovation','tech','national','team']),
+
+('ACM ICPC (International Collegiate Programming Contest)',
+ 'ICPC Foundation & Amrita University (India Regional)',
+ 'World''s oldest, largest, and most prestigious programming contest. Tests algorithmic problem-solving under time pressure. Team of 3 competes through regional rounds to the World Finals.',
+ 'Prizes + Global Recognition',
+ 'November 2025',
+ 'https://icpc.global',
+ '{"course_in": ["Computer Science", "IT", "Mathematics", "Engineering"], "gpa_min": 6.0}',
+ ARRAY['competitive-programming','algorithms','ACM','ICPC','team','coding']),
+
+('Tata Imagination Challenge',
+ 'Tata Sons',
+ 'Annual national-level essay/idea competition for young Indians. Invites ideas on Tata''s chosen themes around technology, sustainability, and social impact. Open to students and young professionals under 30.',
+ '₹1,00,000 + Internship opportunity',
+ 'October 2025',
+ 'https://tataengagementservices.com/imagination',
+ '{}',
+ ARRAY['essay','innovation','Tata','ideas','sustainability','open-to-all']),
+
+('National Entrepreneurship Challenge (NEC)',
+ 'IIT Bombay — E-Cell',
+ 'Asia''s largest entrepreneurship festival. Students pitch their startup ideas to top investors and industry leaders. Includes workshops, mentorship, and live pitch rounds. Open to all college students.',
+ '₹10,00,000+ in funding & prizes',
+ 'February 2026',
+ 'https://nec.e-cell.in',
+ '{}',
+ ARRAY['entrepreneurship','startup','IIT','pitch','business','national']),
+
+('Flipkart GRiD — Engineering Challenge',
+ 'Flipkart',
+ 'India''s largest engineering campus competition by Flipkart. Teams solve complex tech problems in software engineering, robotics, and AI. Multi-round competition leading to a national finale.',
+ '₹5,00,000 + Pre-Placement Offers',
+ 'August–October 2025',
+ 'https://unstop.com/competitions/flipkart-grid-6',
+ '{"course_in": ["Computer Science", "Engineering", "Electronics", "AI/ML"]}',
+ ARRAY['engineering','tech','flipkart','robotics','AI','PPO','coding']),
+
+('Goldman Sachs Global Markets Challenge',
+ 'Goldman Sachs',
+ 'Global case competition on equity research, investment banking, and trading strategies. Indian campus teams participate in regional rounds and compete globally. Strong finance and quantitative skills required.',
+ '$10,000 USD + Fast-track recruitment',
+ 'October 2025',
+ 'https://goldmansachs.com/careers/students',
+ '{"course_in": ["Finance", "Economics", "MBA", "Engineering", "Mathematics"]}',
+ ARRAY['finance','trading','investment','Goldman-Sachs','global','case-study']),
+
+('Dr. APJ Abdul Kalam Innovation Award',
+ 'World CSR Day & World Sustainability',
+ 'National innovation competition honoring Dr. APJ Abdul Kalam. Students submit innovative projects in technology, sustainability, and social entrepreneurship that can make a real-world impact.',
+ '₹2,00,000 + National Recognition',
+ 'November 2025',
+ 'https://worldcsrday.com/kalam-award',
+ '{}',
+ ARRAY['innovation','social-impact','sustainability','national','individual']),
+
+('IIT Bombay Techfest — Competitions',
+ 'IIT Bombay',
+ 'Asia''s largest science and technology festival. 100+ competitions in robotics, coding, design, maths, finance, and gaming. Attracts 1,50,000+ participants from 1,400+ colleges worldwide.',
+ '₹1,20,00,000 total prize pool',
+ 'December 2025',
+ 'https://techfest.org',
+ '{}',
+ ARRAY['tech','robotics','maths','design','IIT','national','multi-domain']),
+
+('Deloitte Maverick (National B-School Competition)',
+ 'Deloitte India',
+ 'India''s biggest business case study competition. Teams analyze business cases across consulting, finance, strategy, and technology. Shortlisted teams go to the National Finals in a major city. Open to MBA and final-year UG students.',
+ '₹5,00,000 + Recruitment opportunities',
+ 'September–November 2025',
+ 'https://jobs2.deloitte.com/in/en/maverick',
+ '{"course_in": ["MBA", "Business Administration", "Economics", "Engineering"]}',
+ ARRAY['case-study','consulting','business','finance','MBA','national']),
+
+('Microsoft Imagine Cup',
+ 'Microsoft',
+ 'Global student technology competition. Teams build solutions using Microsoft technology to solve real-world problems. Categories include AI, mixed reality, and gaming. Country winners go to global contest.',
+ '$100,000 USD + Azure credits + mentorship (Global)',
+ 'March 2026',
+ 'https://imaginecup.microsoft.com',
+ '{"course_in": ["Computer Science", "Engineering", "IT", "Design"]}',
+ ARRAY['global','microsoft','azure','AI','technology','startup','team']),
+
+('Inter IIT Tech Meet',
+ 'IIT Councils',
+ 'Annual tech competition exclusively among all IITs in India. Events span robotics, coding, design, and innovation. Held at a host IIT, this mega-event builds skills, teamwork, and campus pride.',
+ 'Trophies + Internship fast-tracks from sponsors',
+ 'December 2025',
+ 'https://interIIT.org',
+ '{"course_in": ["Engineering", "Science", "Design", "Technology"]}',
+ ARRAY['IIT','robotics','design','coding','engineering','inter-college']),
+
+('HackerEarth University CodeSprint',
+ 'HackerEarth',
+ 'Online competitive programming challenge open to all university students in India. Timed rounds test algorithmic thinking, data structures, and problem-solving speed. Prize vouchers and hiring opportunities for top performers.',
+ '₹1,00,000 in prizes + Job interviews',
+ 'Ongoing quarterly',
+ 'https://www.hackerearth.com/challenges/competitive/',
+ '{"course_in": ["Computer Science", "IT", "Mathematics", "Engineering"]}',
+ ARRAY['coding','competitive-programming','online','algorithms','hiring'])
+
+ON CONFLICT DO NOTHING;
