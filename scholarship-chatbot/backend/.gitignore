@@ -5,6 +5,7 @@ serviceAccountKey.json
 .env
 .env.local
 .env.production
+setup_neon_db.js
 
 # Dependencies
 node_modules/

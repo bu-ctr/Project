@@ -78,8 +78,17 @@ async function ensureSchema() {
   }
 }
 
-const PORT = process.env.PORT || 4000;
-app.listen(PORT, async () => {
-  await ensureSchema();
-  console.log(`Backend listening on ${PORT}`);
-});
+// Run schema check once on startup
+ensureSchema();
+
+// For local development
+if (process.env.NODE_ENV !== 'production' || !process.env.VERCEL) {
+  const PORT = process.env.PORT || 4000;
+  app.listen(PORT, () => {
+    console.log(`Backend listening on ${PORT}`);
+  });
+}
+
+// Export for Vercel serverless
+module.exports = app;
+
