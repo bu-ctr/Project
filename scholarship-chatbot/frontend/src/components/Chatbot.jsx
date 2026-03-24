@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function Chatbot() {
   const [messages, setMessages] = useState([
-    { text: "Hello! I'm your EduNext assistant. What are you looking for today? (Scholarships, Internships, or Courses?)", sender: "bot" }
+    { text: "Hello! I'm your EduNext assistant. What are you looking for today? (Scholarships, Internships, or Competitions?)", sender: "bot" }
   ]);
   const [input, setInput] = useState("");
   const [step, setStep] = useState(0);
@@ -37,7 +37,7 @@ export default function Chatbot() {
   }, [loggedIn]);
 
   const steps = [
-    { field: "intent", question: "What are you looking for today? (Scholarships, Internships, or Courses?)" },
+    { field: "intent", question: "What are you looking for today? (Scholarships, Internships, or Competitions?)" },
     { field: "start", question: "Great choice! To find the best matches, I need to know a bit about you. Shall we update your profile? (Yes/No)" },
     { field: "full_name", question: "What is your full name?" },
     { field: "dob", question: "What is your Date of Birth? (YYYY-MM-DD)" },
@@ -79,8 +79,8 @@ export default function Chatbot() {
 
     // VALIDATION LOGIC
     if (currentStepObj.field === "intent") {
-      if (!lowerText.includes("scholarship") && !lowerText.includes("internship") && !lowerText.includes("course")) {
-        validationError = "Please specify one: Scholarships, Internships, or Courses.";
+      if (!lowerText.includes("scholarship") && !lowerText.includes("internship") && !lowerText.includes("competition")) {
+        validationError = "Please specify one: Scholarships, Internships, or Competitions.";
       }
     } else if (currentStepObj.field === "start" || currentStepObj.field === "disability") {
       if (!lowerText.includes("yes") && !lowerText.includes("no") && !lowerText.includes("sure") && !lowerText.includes("ok")) {
@@ -118,8 +118,8 @@ export default function Chatbot() {
       if (lowerText.includes("internship")) {
         setIntent("internships");
         responseText = steps[nextStep].question;
-      } else if (lowerText.includes("course")) {
-        setIntent("courses");
+      } else if (lowerText.includes("competition")) {
+        setIntent("competitions");
         responseText = steps[nextStep].question;
       } else if (lowerText.includes("scholarship")) {
         setIntent("scholarships");
