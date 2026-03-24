@@ -58,7 +58,7 @@ function matchProfile(profile = {}, criteria = {}) {
 
   // AGE CHECK
   if (c.age_min !== undefined || c.age_max !== undefined) {
-    const age = calculateAge(profile.date_of_birth);
+    const age = calculateAge(profile.dob);
 
     if (age === null) {
       requiredFail = true;

@@ -82,7 +82,7 @@ export default function Profile() {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700">Annual Income</label>
+            <label className="block text-sm font-medium text-gray-700">Annual Income (₹)</label>
             <input
               name="income"
               type="number"
@@ -131,6 +131,18 @@ export default function Profile() {
           </div>
 
           <div>
+            <label className="block text-sm font-medium text-gray-700">Last Semester Marks (%)</label>
+            <input
+              name="last_semester_marks"
+              type="number"
+              value={profile.last_semester_marks || ""}
+              onChange={handleChange}
+              placeholder="e.g. 78.5"
+              className="border p-2 rounded w-full mb-3"
+            />
+          </div>
+
+          <div>
             <label className="block text-sm font-medium text-gray-700">Disability?</label>
             <select
               name="disability"
@@ -141,6 +153,70 @@ export default function Profile() {
               <option value="false">No</option>
               <option value="true">Yes</option>
             </select>
+          </div>
+
+          {/* Address fields */}
+          <div className="md:col-span-2">
+            <label className="block text-sm font-medium text-gray-700">Address Line 1</label>
+            <input
+              name="address_line1"
+              value={profile.address_line1 || ""}
+              onChange={handleChange}
+              placeholder="Street / House No."
+              className="border p-2 rounded w-full mb-3"
+            />
+          </div>
+
+          <div className="md:col-span-2">
+            <label className="block text-sm font-medium text-gray-700">Address Line 2</label>
+            <input
+              name="address_line2"
+              value={profile.address_line2 || ""}
+              onChange={handleChange}
+              placeholder="Apartment, area, locality (optional)"
+              className="border p-2 rounded w-full mb-3"
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700">City</label>
+            <input
+              name="city"
+              value={profile.city || ""}
+              onChange={handleChange}
+              className="border p-2 rounded w-full mb-3"
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700">State</label>
+            <input
+              name="state"
+              value={profile.state || ""}
+              onChange={handleChange}
+              className="border p-2 rounded w-full mb-3"
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700">Postal Code</label>
+            <input
+              name="postal_code"
+              value={profile.postal_code || ""}
+              onChange={handleChange}
+              className="border p-2 rounded w-full mb-3"
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700">Country</label>
+            <input
+              name="country"
+              value={profile.country || ""}
+              onChange={handleChange}
+              placeholder="e.g. India"
+              className="border p-2 rounded w-full mb-3"
+            />
           </div>
 
         </div>

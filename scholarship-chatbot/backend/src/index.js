@@ -14,6 +14,7 @@ const internshipsRoutes = require('./routes/internships');
 const competitionsRoutes = require('./routes/competitions');
 const dashboardRoutes = require('./routes/dashboard');
 const gpaRoutes = require('./routes/gpa');
+const chatbotRoutes = require('./routes/chatbot');
 
 const app = express();
 app.use(cors({
@@ -43,6 +44,7 @@ app.use('/api', internshipsRoutes);
 app.use('/api', competitionsRoutes);
 app.use('/api/dashboard', dashboardRoutes);
 app.use('/api/gpa', gpaRoutes);
+app.use('/api/chatbot', chatbotRoutes);
 
 // fallback 404 for /api/*
 app.use('/api', (req, res) => res.status(404).json({ error: 'Not found' }));
@@ -66,6 +68,7 @@ async function ensureSchema() {
       "ALTER TABLE profiles ADD COLUMN IF NOT EXISTS twelfth_percentage NUMERIC(5,2)",
       "ALTER TABLE profiles ADD COLUMN IF NOT EXISTS last_semester_marks NUMERIC(5,2)",
       // User auth columns for Google Sign-In
+      "ALTER TABLE profiles ADD COLUMN IF NOT EXISTS country TEXT",
       "ALTER TABLE users ADD COLUMN IF NOT EXISTS auth_provider VARCHAR(20) DEFAULT 'email'",
       "ALTER TABLE users ADD COLUMN IF NOT EXISTS google_id VARCHAR(255)"
     ];
