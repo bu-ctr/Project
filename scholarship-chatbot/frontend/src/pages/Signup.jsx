@@ -7,6 +7,25 @@ function isValidEmail(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
+function getPasswordErrors(password) {
+  const errors = [];
+  if (password.length < 6) errors.push("At least 6 characters");
+  if (password.length > 8) errors.push("No more than 8 characters");
+  if (!/[A-Z]/.test(password)) errors.push("At least one uppercase letter (A-Z)");
+  if (!/[a-z]/.test(password)) errors.push("At least one lowercase letter (a-z)");
+  if (!/[0-9]/.test(password)) errors.push("At least one number (0-9)");
+  if (!/[@#$%&*]/.test(password)) errors.push("At least one special character (@, #, $, %, &, *)");
+  return errors;
+}
+
+const PASSWORD_RULES = [
+  { label: "6–8 characters", test: (p) => p.length >= 6 && p.length <= 8 },
+  { label: "One uppercase letter (A-Z)", test: (p) => /[A-Z]/.test(p) },
+  { label: "One lowercase letter (a-z)", test: (p) => /[a-z]/.test(p) },
+  { label: "One number (0-9)", test: (p) => /[0-9]/.test(p) },
+  { label: "One special character (@, #, $, %, &, *)", test: (p) => /[@#$%&*]/.test(p) },
+];
+
 export default function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -21,8 +40,9 @@ export default function Signup() {
       return;
     }
 
-    if (password.length < 6) {
-      setError("Password must be at least 6 characters.");
+    const pwdErrors = getPasswordErrors(password);
+    if (pwdErrors.length > 0) {
+      setError("Password does not meet requirements: " + pwdErrors.join("; ") + ".");
       return;
     }
 
@@ -128,12 +148,30 @@ export default function Signup() {
           </label>
           <input
             type="password"
-            placeholder="At least 6 characters"
+            placeholder="6-8 chars, e.g. Hello@1"
             className="w-full border border-gray-300 px-4 py-3 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             disabled={loading}
           />
+          {/* Live password requirements checklist */}
+          {password.length > 0 && (
+            <ul className="mt-2 space-y-1">
+              {PASSWORD_RULES.map((rule) => {
+                const passed = rule.test(password);
+                return (
+                  <li
+                    key={rule.label}
+                    className={`flex items-center gap-2 text-xs ${passed ? "text-green-600" : "text-red-500"
+                      }`}
+                  >
+                    <span>{passed ? "✓" : "✗"}</span>
+                    <span>{rule.label}</span>
+                  </li>
+                );
+              })}
+            </ul>
+          )}
         </div>
 
         <button
