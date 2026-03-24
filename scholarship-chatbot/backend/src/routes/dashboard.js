@@ -181,9 +181,9 @@ router.get('/stats', auth, async (req, res) => {
         const internshipsRes = await db.query('SELECT id, title, company, stipend FROM internships LIMIT 100');
         const internshipsCount = internshipsRes.rowCount || 0;
 
-        // Get courses
-        const coursesRes = await db.query('SELECT id, title FROM courses LIMIT 100');
-        const coursesCount = coursesRes.rowCount || 0;
+        // Get competitions
+        const competitionsRes = await db.query('SELECT id, title FROM competitions LIMIT 100');
+        const competitionsCount = competitionsRes.rowCount || 0;
 
         // Count matches from last 24 hours (using notifications as proxy)
         const oneDayAgo = new Date(Date.now() - 24 * 60 * 60 * 1000);
@@ -203,8 +203,8 @@ router.get('/stats', auth, async (req, res) => {
             matchScore: Math.round(s.score)
         }));
 
-        // Total opportunities (scholarships + internships + courses)
-        const totalOpportunities = scholarships.length + internshipsCount + coursesCount;
+        // Total opportunities (scholarships + internships + competitions)
+        const totalOpportunities = scholarships.length + internshipsCount + competitionsCount;
         const totalMatches = matchedScholarships.length;
 
         // Get next best action
@@ -224,7 +224,7 @@ router.get('/stats', auth, async (req, res) => {
             stats: {
                 scholarshipsMatched: matchedScholarships.length,
                 internshipsAvailable: internshipsCount,
-                coursesAvailable: coursesCount
+                competitionsAvailable: competitionsCount
             }
         });
     } catch (err) {
